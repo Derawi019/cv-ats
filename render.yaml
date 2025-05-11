@@ -1,0 +1,32 @@
+services:
+  # Backend API service
+  - type: web
+    name: cv-ats-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 4
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: DATABASE_URL
+        fromDatabase:
+          name: cv-ats-db
+          property: connectionString
+
+  # Frontend service
+  - type: web
+    name: cv-ats-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && serve -s build -l $PORT
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: REACT_APP_API_URL
+        value: https://cv-ats-api.onrender.com
+
+databases:
+  - name: cv-ats-db
+    databaseName: cvats
+    user: cvats
+    plan: free 
