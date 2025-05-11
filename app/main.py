@@ -6,7 +6,8 @@ from app.core.config import settings
 app = FastAPI(
     title="CV-ATS API",
     description="API for CV Applicant Tracking System",
-    version="1.0.0"
+    version="1.0.0",
+    root_path=""  # This ensures the app works at the base URL
 )
 
 # Configure CORS
@@ -19,11 +20,11 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(auth.router, prefix="/api", tags=["Authentication"])
-app.include_router(jobs.router, prefix="/api", tags=["Jobs"])
-app.include_router(candidates.router, prefix="/api", tags=["Candidates"])
-app.include_router(resumes.router, prefix="/api", tags=["Resumes"])
-app.include_router(applications.router, prefix="/api", tags=["Applications"])
+app.include_router(auth.router, prefix=settings.API_V1_STR, tags=["Authentication"])
+app.include_router(jobs.router, prefix=settings.API_V1_STR, tags=["Jobs"])
+app.include_router(candidates.router, prefix=settings.API_V1_STR, tags=["Candidates"])
+app.include_router(resumes.router, prefix=settings.API_V1_STR, tags=["Resumes"])
+app.include_router(applications.router, prefix=settings.API_V1_STR, tags=["Applications"])
 
 @app.get("/")
 async def root():

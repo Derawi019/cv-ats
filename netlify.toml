@@ -5,9 +5,9 @@
 [build.environment]
   PYTHON_VERSION = "3.10"
 
-# SPA redirect rule - Required for client-side routing
+# Handle all requests through the API function
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/api/:splat"
   status = 200
   force = true 
