@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="256" cy="256" r="256" fill="#1976D2"/>
+    
+    <!-- Document Icon -->
+    <path d="M384 128H128C119.163 128 112 135.163 112 144V368C112 376.837 119.163 384 128 384H384C392.837 384 400 376.837 400 368V144C400 135.163 392.837 128 384 128Z" fill="white"/>
+    
+    <!-- Lines in Document -->
+    <rect x="160" y="192" width="192" height="16" rx="8" fill="#1976D2"/>
+    <rect x="160" y="224" width="192" height="16" rx="8" fill="#1976D2"/>
+    <rect x="160" y="256" width="128" height="16" rx="8" fill="#1976D2"/>
+    
+    <!-- Checkmark -->
+    <path d="M320 320L352 352L384 320" stroke="#1976D2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 
