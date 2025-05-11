@@ -10,4 +10,8 @@
   from = "/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
-  force = true 
+  force = true
+
+# Custom domain configuration
+[context.production.environment]
+  BASE_URL = "https://cv-ats.netlify.app" 

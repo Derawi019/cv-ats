@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     # API Settings
     API_V1_STR: str = "/api/v1"
     PROJECT_NAME: str = "Smart Resume Screening System"
+    BASE_URL: str = os.getenv("BASE_URL", "https://cv-ats.netlify.app")
     
     # Security
     SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-here")
