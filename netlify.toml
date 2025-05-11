@@ -5,7 +5,9 @@
 [build.environment]
   PYTHON_VERSION = "3.10"
 
+# SPA redirect rule - Required for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
+  force = true 
